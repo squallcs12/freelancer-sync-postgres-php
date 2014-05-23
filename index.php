@@ -30,6 +30,9 @@ foreach($_REQUEST['row'] as $id => $data){
 	$sql .= "WHERE id=$" . ($colCount + 1);
 	$colValues[] = $id;
 
+	echo "<p>$sql</p>";
+	echo "<pre>"; var_dump($colValues); echo "</pre>";
+
 	pg_query_params($sql, $colValues);
 }
 
