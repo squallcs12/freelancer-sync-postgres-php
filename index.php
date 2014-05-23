@@ -23,11 +23,11 @@ foreach($_REQUEST['row'] as $id => $data){
 	$colValues = array();
 	foreach($data as $column => $value){
 		$colCount++;
-		$updates[] = $tableMapping[$column] . "=${$colCount}";
+		$updates[] = $tableMapping[$column] . "=\${$colCount}";
 		$colValues[] = $value;
 	}
 	$sql .= implode(",", $updates);
-	$sql .= "WHERE id=$" . ($colCount + 1);
+	$sql .= "WHERE id=\$" . ($colCount + 1);
 	$colValues[] = $id;
 
 	echo "<p>$sql</p>";
