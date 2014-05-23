@@ -27,7 +27,7 @@ foreach($_REQUEST['row'] as $id => $data){
 		$colValues[] = $value;
 	}
 	$sql .= implode(",", $updates);
-	$sql .= "WHERE id=\$" . ($colCount + 1);
+	$sql .= " WHERE id=\$" . ($colCount + 1);
 	$colValues[] = $id;
 
 	echo "<p>$sql</p>";
